@@ -1,9 +1,9 @@
-package com.zhc.test.haicheng;
+package com.zhc.test.haicheng.list;
 
 /**
  * vector  线程安全
  *     扩容因子：2倍
- *     加锁的粒度是方法，并不是全局锁，所以还会有线程不安全的情况
+ *     复合操作需要程序自己控制线程安全
  */
 
 /**
@@ -61,7 +61,7 @@ public class arrayListTest {
      *                 确定容量后，进行数组拷贝，将老的数组的元素拷贝到新的数组中（相比较LinkedList插入慢，就是因为拷贝）
      *                 默认尾部添加元素
      *
-     *                 初始化指定容量，可以减少扩容次数（这样可能不会比LinkedList插入慢）
+     *                 初始化指定容量，可以减少扩容次数（这样可能不会比LinkedList插入慢）（LinkedList会创建节点）
      *
      * 指定下标添加元素 O(n)：  将指定的下标之后的元素，依次向后以为拷贝（相当于后移一位），最后将要添加到指定下标的元素copy到该处
      *
